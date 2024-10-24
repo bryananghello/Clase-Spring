@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Registro de Productos</title>
+	<style>
+		html {
+			background-color: #c5dec9;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 align="center"> Registro de productos</h1>
+	<form th:action="@{/Vistas/GuardarProduto}" method="post" 
+	th:object="${regproducto}">
+		<table align="center" border="2">
+			<input type="hidden" th:field="*{idproducto}">
+			<tr>
+				<td>
+					producto
+				</td>
+				<td>
+					<input type="text" th:field="*{nomprod}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					precio
+				</td>
+				<td>
+					<input type="number" th:field="*{precio}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					cantidad
+				</td>
+				<td>
+					<input type="number" th:field="*{cantidad}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					total
+				</td>
+				<td>
+					<input type="number" th:field="*{total}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					codbarras
+				</td>
+				<td>
+					<input type="text" th:field="*{codbarras}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					nrolote
+				</td>
+				<td>
+					<input type="text" th:field="*{nrolote}">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					fechavencimiento
+				</td>
+				<td>
+					<input type="date" th:field="*{fechaven}">
+				</td>
+			</tr>
+			<tr>
+
+				<td colspan="2" align="center">
+					<input type="submit" value="registrar producto">
+				</td>
+			</tr>		
+</table>
+	</form>
+	<!--
+		ejecucion del proyecto...
+		http://localhost:9293/Vistas/ListadoProductos
+	-->
+</body>
+
+</html>
